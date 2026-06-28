@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Colégio Assembleiano de Marília - Educação Infantil, Ensino Fundamental e Ensino Médio com values cristãos, Sistema Mackenzie de Ensino e uma história viva em Marília.">
+  <title>Colégio Assembleiano de Marília | CAM</title>
+  <style>
+    :root {
+      --cam-navy-980: #030226;
+      --cam-navy-950: #08043f;
+      --cam-navy-900: #10075f;
+      --cam-navy-800: #171077;
+      --cam-navy-700: #211c8c;
+      --cam-blue-soft: #eef2ff;
+      --cam-blue-line: #d9def8;
+      --cam-yellow: #f8d716;
+      --cam-yellow-2: #ffe66b;
+      --mackenzie-red: #d91828;
+      --ink: #111322;
+      --ink-2: #34384d;
+      --muted: #62697d;
+      --paper: #ffffff;
+      --soft: #f5f7fb;
+      --soft-2: #edf1f7;
+      --line: #dde2ec;
+      --radius: 8px;
+      --shadow-sm: 0 8px 20px rgba(8, 4, 63, .08);
+      --shadow: 0 22px 55px rgba(8, 4, 63, .15);
+      --font: Aptos, "Segoe UI", Inter, Roboto, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--cam-navy-980);
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.58;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    .wrap {
+      width: min(1160px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    /* CORRIGIDO: Tirado o amarelão do anúncio do topo */
+    .announcement {
+      background: var(--cam-navy-950);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .announcement .wrap {
+      min-height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .announcement span:last-child {
+      font-weight: 700;
+      opacity: .78;
+    }
+
+    /* CORRIGIDO: Efeito transparente/glassmorphism moderno com tonalidade escura */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(3, 2, 38, 0.75);
+      border-bottom: 1px solid rgba(119, 76, 76, 0.1);
+      box-shadow: 0 10px 30px rgba(3, 2, 38, .15);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 220px;
+    }
+
+    .brand-mark {
+      width: 112px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 4px 8px;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, .16);
+    }
+
+    .brand-mark img {
+      width: 100%;
+      max-height: 34px;
+      object-fit: contain;
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 1px;
+      color: white;
+      line-height: 1.18;
+    }
+
+    .brand-copy strong {
+      font-size: 13px;
+      letter-spacing: 0;
+    }
+
+    .brand-copy span {
+      color: rgba(255, 255, 255, .62);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      color: rgba(255, 255, 255, .82);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .menu a {
+      padding: 9px 10px;
+      border-radius: var(--radius);
+      transition: background .18s ease, color .18s ease;
+    }
+
+    .menu a:hover {
+      background: rgba(255, 255, 255, .10);
+      color: white;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 15px;
+      border-radius: var(--radius);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    /* CORRIGIDO: Botão primário agora segue a paleta azul ao invés de amarelo berrante */
+    .btn-primary {
+      background: var(--cam-navy-900);
+      color: #ffffff;
+      box-shadow: 0 14px 24px rgba(16, 7, 95, .15);
+    }
+
+    .btn-primary:hover {
+      background: var(--cam-navy-700);
+    }
+
+    .btn-navy {
+      background: var(--cam-navy-900);
+      color: #fff;
+      box-shadow: 0 14px 28px rgba(8, 4, 63, .22);
+    }
+
+    .btn-navy:hover {
+      background: var(--cam-navy-700);
+    }
+
+    .btn-ghost {
+      color: white;
+      border: 1px solid rgba(255, 255, 255, .22);
+      background: rgba(255, 255, 255, .08);
+    }
+
+    .btn-outline {
+      color: var(--cam-navy-900);
+      border: 1px solid var(--cam-blue-line);
+      background: white;
+    }
+
+    .menu-toggle {
+      width: 40px;
+      height: 40px;
+      display: none;
+      place-items: center;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .10);
+      color: white;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 650px;
+      color: white;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(60, 55, 77, 0.96) 0%, rgba(7, 14, 53, 0.88) 36%, rgba(1, 1, 24, 0.42) 100%),
+        url("") center right / cover no-repeat,
+        var(--cam-navy-950);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, rgba(3, 2, 38, .50));
+      pointer-events: none;
+    }
+
+    .hero .wrap {
+      position: relative;
+      z-index: 1;
+      min-height: 650px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      align-items: end;
+      gap: 34px;
+      padding: 74px 0 46px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .20);
+      color: white;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      margin: 22px 0 18px;
+      font-size: 68px;
+      line-height: .97;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 0 26px;
+      color: rgba(255, 255, 255, .82);
+      font-size: 19px;
+      line-height: 1.65;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-panel {
+      display: grid;
+      gap: 12px;
+    }
+
+    .proof-card {
+      padding: 18px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .11);
+      border: 1px solid rgba(255, 255, 255, .18);
+      backdrop-filter: blur(12px);
+    }
+
+    .proof-card b {
+      display: block;
+      margin-bottom: 4px;
+      color: white;
+      font-size: 32px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .proof-card span {
+      display: block;
+      color: rgba(255, 255, 255, .76);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .quick-strip {
+      position: relative;
+      z-index: 3;
+      margin-top: -34px;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 12px;
+    }
+
+    .quick-item {
+      min-height: 106px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 18px;
+      border-radius: var(--radius);
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* CORRIGIDO: Removido o amarelão do primeiro item do strip */
+    .quick-item:first-child {
+      background: white;
+      border-color: var(--line);
+    }
+
+    .quick-icon-img {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .quick-icon-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .quick-item b {
+      display: block;
+      color: var(--cam-navy-950);
+      font-size: 17px;
+      line-height: 1.18;
+    }
+
+    .quick-item span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .quick-item:first-child span {
+      color: var(--muted);
+    }
+
+    section {
+      padding: 86px 0;
+    }
+
+    .section-soft {
+      background: var(--soft);
+    }
+
+    .section-navy {
+      background: var(--cam-navy-950);
+      color: rgb(255, 255, 255);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 34px;
+    }
+
+    /* MANTIDO: O tracinho amarelo que serve de excelente indicador visual */
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 10px;
+      color: var(--cam-navy-700);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+
+    .label::before {
+      content: "";
+      width: 26px;
+      height: 3px;
+      border-radius: 3px;
+      background: var(--cam-yellow);
+    }
+
+    .section-navy .label {
+      color: white;
+    }
+
+    h2 {
+      max-width: 720px;
+      margin: 0;
+      font-size: 42px;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 650px;
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .section-navy .lead {
+      color: rgba(255, 255, 255, .72);
+    }
+
+    .programs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .program-card {
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      border-radius: var(--radius);
+      background: rgb(255, 255, 255);             /* <--- Força o fundo branco em todos */
+      color: var(--cam-navy-950);    /* <--- Deixa os textos escuros para aparecerem no branco */
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+   }
+     .program-card.featured {
+      background: rgb(255, 255, 255) !important;
+}
+
+
+          /* Força todos os textos, títulos e listas do card do meio a ficarem escuros */
+     .program-card.featured *, 
+     .program-card.featured h3, 
+     .program-card.featured p, 
+     .program-card.featured li {
+          color: #0b0833 !important;
+     }
+    .program-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .program-code {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      background: var(--cam-blue-soft);
+      color: var(--cam-navy-900);
+      font-weight: 950;
+    }
+
+    .program-card.featured .program-code {
+      background: var(--cam-navy-900);
+      color: white;
+    }
+
+    .program-age {
+      padding: 6px 9px;
+      border-radius: var(--radius);
+      background: var(--soft);
+      color: var(--cam-navy-900);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .program-card.featured .program-age {
+      background: rgba(255, 255, 255, .12);
+      color: rgba(255, 255, 255, .82);
+    }
+
+    .program-card h3 {
+      margin: 0 0 10px;
+      font-size: 25px;
+      line-height: 1.14;
+      letter-spacing: 0;
+    }
+
+    .program-card p {
+      margin: 0 0 20px;
+      color: var(--muted);
+    }
+
+    .program-card.featured p {
+      color: rgba(255, 255, 255, .72);
+    }
+
+    .program-list {
+      display: grid;
+      gap: 9px;
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--ink-2);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .program-card.featured .program-list {
+      border-color: rgba(255, 255, 255, .14);
+      color: rgba(255, 255, 255, .84);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .photo-composition {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 280px 190px;
+      gap: 12px;
+    }
+
+    .photo-composition figure {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--cam-navy-900);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .photo-composition figure:first-child {
+      grid-column: span 2;
+    }
+
+    .photo-composition img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-composition figcaption {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      padding: 7px 10px;
+      border-radius: var(--radius);
+      background: rgba(3, 2, 38, .86);
+      color: white;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .text-card {
+      padding: 26px;
+      border-radius: var(--radius);
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .text-card p {
+      margin: 14px 0;
+      color: var(--muted);
+    }
+
+    .pill-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .pill {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      padding: 14px;
+      border-radius: var(--radius);
+      background: var(--cam-blue-soft);
+      color: var(--cam-navy-900);
+      font-weight: 900;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .then-now {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      min-height: 420px;
+    }
+
+    .then-now figure {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--cam-navy-900);
+    }
+
+    .then-now img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .then-now figcaption {
+      position: absolute;
+      inset: auto 12px 12px;
+      padding: 10px;
+      border-radius: var(--radius);
+      background: rgba(3, 2, 38, .88);
+      color: white;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .timeline-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 16px;
+      padding: 18px;
+      border-radius: var(--radius);
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .timeline-year {
+      color: var(--cam-navy-900);
+      font-size: 18px;
+      font-weight: 950;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 5px;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .video-box {
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #000000;
+      border: 3px solid #a39c9c;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .25);
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .video-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .campaign-stack {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .campaign-card {
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: white;
+      color: var(--ink);
+      display: grid;
+      grid-template-columns:120px 1fr;
+      min-height: 142px;
+    }
+
+    .campaign-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .campaign-card div {
+      padding: 16px;
+    }
+
+    .campaign-card b {
+      display: block;
+      color: var(--cam-navy-900);
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .campaign-card span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .mackenzie {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 36px;
+      align-items: center;
+      padding: 30px;
+      border-radius: var(--radius);
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mackenzie-logo {
+      padding: 24px;
+      border-radius: var(--radius);
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .mackenzie h2 {
+      color: var(--ink);
+    }
+
+    .mackenzie p {
+      margin: 14px 0 0;
+      color: var(--muted);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr .9fr;
+      grid-auto-rows: 230px;
+      gap: 12px;
+    }
+
+    .gallery-tile {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--cam-navy-900);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .gallery-tile.large {
+      grid-row: span 2;
+    }
+
+    .gallery-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+
+    .gallery-tile:hover img {
+      transform: scale(1.035);
+    }
+
+    .gallery-tile figcaption {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      padding: 10px;
+      border-radius: var(--radius);
+      background: rgba(3, 2, 38, .86);
+      color: white;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .admissions {
+      background:
+        linear-gradient(90deg, rgba(8, 4, 63, .96), rgba(8, 4, 63, .72)),
+        url("assets/campanha-transformando-vidas.jpg") center right / cover no-repeat,
+        var(--cam-navy-950);
+      color: white;
+    }
+
+    .admissions-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .step {
+      min-height: 150px;
+      padding: 18px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .10);
+      border: 1px solid rgba(255, 255, 255, .16);
+      backdrop-filter: blur(8px);
+    }
+
+    /* CORRIGIDO: O número do passo agora usa o fundo navy escuro ao invés de amarelo */
+    .step b {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      border-radius: var(--radius);
+      background: var(--cam-navy-900);
+      color: #ffffff;
+    }
+
+    .step h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .step p {
+      margin: 0;
+      color: rgba(255, 255, 255, .72);
+      font-size: 14px;
+    }
+
+    .contact {
+      background: var(--cam-navy-980);
+      color: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .contact-item {
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, .14);
+      background: rgba(255, 255, 255, .08);
+    }
+
+    .contact-item b {
+      display: block;
+      color: white;
+      margin-bottom: 2px;
+    }
+
+    .contact-item span {
+      color: rgba(255, 255, 255, .72);
+      font-size: 14px;
+    }
+
+    form {
+      padding: 24px;
+      border-radius: var(--radius);
+      background: white;
+      color: var(--ink);
+      box-shadow: var(--shadow);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    label {
+      display: grid;
+      gap: 6px;
+      color: var(--ink-2);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 44px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 11px 12px;
+      color: var(--ink);
+      background: white;
+      outline: none;
+      transition: border-color .18s ease, box-shadow .18s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--cam-navy-700);
+      box-shadow: 0 0 0 3px rgba(33, 28, 140, .12);
+    }
+
+    textarea {
+      min-height: 116px;
+      resize: vertical;
+    }
+
+    .span-2 {
+      grid-column: span 2;
+    }
+
+    footer {
+      padding: 5px 0;
+      background: var(--cam-navy-980);
+      color: rgba(255, 255, 255, .66);
+      border-top: 1px solid rgba(255, 255, 255, .10);
+      font-size: 14px;
+    }
+
+    footer .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    footer img {
+      width: 80px;
+      padding: 5px;
+      border-radius: var(--radius);
+      background: white;
+    }
+
+    @media (max-width: 980px) {
+      .brand-copy {
+        display: none;
+      }
+
+      .menu {
+        position: fixed;
+        inset: 94px 18px auto;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+        color: var(--ink);
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .menu.open {
+        display: flex;
+      }
+
+      .menu a:hover {
+        background: var(--cam-blue-soft);
+        color: var(--cam-navy-900);
+      }
+
+      .menu-toggle {
+        display: grid;
+      }
+
+      .header-actions .btn {
+        display: none;
+      }
+
+      .hero .wrap,
+      .about-grid,
+      .timeline,
+      .media-grid,
+      .mackenzie,
+      .admissions-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel,
+      .quick-grid,
+      .programs {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .quick-grid {
+        display: grid;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .mackenzie {
+        padding: 22px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .announcement .wrap,
+      footer .wrap {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .announcement .wrap {
+        padding: 7px 0;
+      }
+
+      .brand {
+        min-width: 0;
+      }
+
+      .brand-mark {
+        width: 104px;
+      }
+
+      .hero,
+      .hero .wrap {
+        min-height: 660px;
+      }
+
+      .hero .wrap {
+        padding-top: 54px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+        line-height: 1.02;
+      }
+
+      .hero p,
+      .lead {
+        font-size: 16px;
+      }
+
+      h2 {
+        font-size: 31px;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .quick-grid,
+      .hero-panel,
+      .programs,
+      .pill-grid,
+      .then-now,
+      .steps,
+      .form-grid,
+      .gallery-grid,
+      .photo-composition,
+      .campaign-stack {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-composition {
+        grid-template-rows: 250px 190px 190px;
+      }
+
+      .photo-composition figure:first-child {
+        grid-column: auto;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .campaign-card {
+        grid-template-columns: 112px 1fr;
+      }
+
+      .span-2 {
+        grid-column: span 1;
+      }
+
+      .gallery-tile.large {
+        grid-row: auto;
+      }
+    }
+  </style>
+<style type="text/css"></style></head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="http://127.0.0.1:4173/index.html#inicio" aria-label="Página inicial do Colégio Assembleiano de Marília">
+        <span class="brand-mark"><img src="/Colégio Assembleiano de Marília _ CAM_files/cam-logo.jpg" alt="CAM - Colégio Assembleiano de Marília"></span>
+        <span class="brand-copy">
+          <strong>Colégio Assembleiano</strong>
+          <span>Ensinar e educar para a vida</span>
+        </span>
+      </a>
+
+      <nav class="menu" id="menu" aria-label="Menu principal">
+        <a href="http://127.0.0.1:4173/index.html#sobre">Sobre</a>
+        <a href="http://127.0.0.1:4173/index.html#ensino">Ensino</a>
+        <a href="http://127.0.0.1:4173/index.html#historia">História</a>
+        <a href="http://127.0.0.1:4173/index.html#video">Vídeo</a>
+        <a href="http://127.0.0.1:4173/index.html#galeria">Fotos</a>
+        <a href="http://127.0.0.1:4173/index.html#contato">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-primary" href="http://127.0.0.1:4173/index.html#contato">Agendar visita</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">Educação cristã em Marília</span>
+          <h1 id="hero-title">Transformando vidas através da educação.</h1>
+          <p>Uma escola com identidade, acolhimento e projeto pedagógico consistente para acompanhar crianças e jovens da Educação Infantil ao Ensino Médio.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="http://127.0.0.1:4173/index.html#contato">Quero conhecer o CAM</a>
+            <a class="btn btn-ghost" href="http://127.0.0.1:4173/index.html#video">Assistir ao vídeo</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Destaques do colégio">
+          <div class="proof-card"><b>40+</b><span>anos de presença educacional e cristã em Marília</span></div>
+          <div class="proof-card"><b>3</b><span>segmentos para uma jornada escolar completa</span></div>
+          <div class="proof-card"><b>2026</b><span>matrículas abertas com atendimento individualizado</span></div>
+        </aside>
+      </div>
+    </section>
+
+<div class="quick-strip">
+  <div class="wrap quick-grid">
+
+    <a class="quick-item" href="#contato">
+      <div class="quick-icon-img">
+        <img src="Colégio Assembleiano de Marília _ CAM_files/alunas-tecnologia.jpg" alt="Agende uma visita">
+      </div>
+      <div>
+        <b>Agende uma visita</b>
+        <span>Conheça estrutura, rotina e proposta pedagógica.</span>
+      </div>
+    </a>
+
+    <a class="quick-item" href="#ensino">
+      <div class="quick-icon-img">
+        <img src="Colégio Assembleiano de Marília _ CAM_files/cam-logo.jpg" alt="Escolha o segmento">
+      </div>
+      <div>
+        <b>Escolha o segmento</b>
+        <span>Infantil, Fundamental e Médio em uma mesma escola.</span>
+      </div>
+    </a>
+
+    <a class="quick-item" href="#mackenzie">
+      <div class="quick-icon-img">
+        <img src="Colégio Assembleiano de Marília _ CAM_files/images.png" alt="Sistema Mackenzie">
+      </div>
+      <div>
+        <b>Sistema Mackenzie</b>
+        <span>Material e organização pedagógica reconhecidos.</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+    <section id="sobre" class="section-soft">
+      <div class="wrap about-grid">
+        <div class="photo-composition">
+          <figure>
+            <img src="./Colégio Assembleiano de Marília _ CAM_files/fachada-atual.jpg" alt="Fachada atual do Colégio Assembleiano de Marília" loading="lazy">
+            <figcaption>Fachada atual</figcaption>
+          </figure>
+          <figure>
+            <img src="/Colégio Assembleiano de Marília _ CAM_files/images.png" alt="Alunas do CAM usando notebook" loading="lazy">
+            <figcaption>Aprendizagem conectada</figcaption>
+          </figure>
+          <figure>
+            <img src="/Colégio Assembleiano de Marília _ CAM_files/download.jpg" alt="Campanha do Colégio Assembleiano de Marília" loading="lazy">
+            <figcaption>Identidade CAM</figcaption>
+          </figure>
+        </div>
+
+        <div class="text-card">
+          <span class="label">Sobre o CAM</span>
+          <h2>Uma escola com história, identidade e cuidado in cada fase do aluno.</h2>
+          <p>O Colégio Assembleiano de Marília une ensino, acolhimento e values cristãos em uma rotina pensada para desenvolver conhecimento, caráter e convivência.</p>
+          <p>A proposta pedagógica valoriza o acompanhamento próximo das famílias, a organização dos estudos e a formação de alunos preparados para os desafios da vida.</p>
+          <div class="pill-grid">
+            <div class="pill">Valores cristãos</div>
+            <div class="pill">Acolhimento familiar</div>
+            <div class="pill">Rotina pedagógica clara</div>
+            <div class="pill">Formação para a vida</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ensino">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="label">Segmentos</span>
+            <h2>Do primeiro contato com a escola até a preparação para novos desafios.</h2>
+          </div>
+          <p class="lead">Cada segmento tem uma rotina própria, respeitando a idade, o desenvolvimento e os objetivos de aprendizagem dos alunos.</p>
+        </div>
+
+        <div class="programs">
+          <article class="program-card">
+            <div class="program-top">
+              <span class="program-code">EI</span>
+              <span class="program-age">Infantil</span>
+            </div>
+            <h3>Educação Infantil</h3>
+            <p>Ambiente acolhedor para desenvolver autonomia, linguagem, convivência e curiosidade com segurança.</p>
+            <div class="program-list">
+              <span>Adaptação acompanhada</span>
+              <span>Rotina afetiva e organizada</span>
+              <span>Aprendizagem por experiências</span>
+            </div>
+          </article>
+
+          <article class="program-card featured">
+            <div class="program-top">
+              <span class="program-code">EF</span>
+              <span class="program-age">Fundamental</span>
+            </div>
+            <h3>Ensino Fundamental</h3>
+            <p>Base acadêmica sólida, formação de hábitos de estudo e desenvolvimento de responsabilidade.</p>
+            <div class="program-list">
+              <span>Leitura, escrita e raciocínio</span>
+              <span>Projetos interdisciplinares</span>
+              <span>Acompanhamento pedagógico</span>
+            </div>
+          </article>
+
+          <article class="program-card">
+            <div class="program-top">
+              <span class="program-code">EM</span>
+              <span class="program-age">Médio</span>
+            </div>
+            <h3>Ensino Médio</h3>
+            <p>Preparação acadêmica e humana para vestibulares, ENEM, escolhas profissionais e vida adulta.</p>
+            <div class="program-list">
+              <span>Orientação de estudos</span>
+              <span>Projeto de vida</span>
+              <span>Foco em resultados e propósito</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="historia" class="section-soft">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="label">Antes e hoje</span>
+            <h2>Uma história que evoluiu junto com a escola.</h2>
+          </div>
+          <p class="lead">A trajetória do CAM mostra uma escola que preserva sua essência cristã enquanto evolui in estrutura, comunicação e acolhimento.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="then-now">
+            <figure>
+              <img src="/Colégio Assembleiano de Marília _ CAM_files/fachada-antiga.jpg" alt="Fachada antiga do Colégio Assembleiano de Marília" loading="lazy">
+              <figcaption>Antes - uma marca já presente na cidade</figcaption>
+            </figure>
+            <figure>
+              <img src="./Colégio Assembleiano de Marília _ CAM_files/fachada-atual.jpg" alt="Fachada atual do Colégio Assembleiano de Marília" loading="lazy">
+              <figcaption>Hoje - estrutura renovada e mais visível</figcaption>
+            </figure>
+          </div>
+
+          <div class="timeline-list">
+            <article class="timeline-item">
+              <div class="timeline-year">Raiz</div>
+              <div>
+                <h3>Identidade cristã e compromisso educacional</h3>
+                <p>Uma escola que comunica values, cuidado e presença junto às famílias.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-year">Evolução</div>
+              <div>
+                <h3>Estrutura mais forte e comunicação mais moderna</h3>
+                <p>A fachada atual mostra uma instituição mais preparada para receber novas gerações.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-year">Agora</div>
+              <div>
+                <h3>Matrículas com uma jornada mais simples</h3>
+                <p>As informações de matrícula são apresentadas de forma simples para facilitar o primeiro contato da família.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-navy" id="video">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="label">Vídeo institucional</span>
+            <h2></h2>
+          </div>
+          <p class="lead"></p>
+        </div>
+
+        <div class="media-grid">
+          <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/GyAyCLzi0Hk" title="Vídeo do Colégio Assembleiano de Marília" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+
+          <div class="campaign-stack">
+            <article class="campaign-card">
+              <img src="/Colégio Assembleiano de Marília _ CAM_files/ensinomedio2.jpg" alt="Campanha de matrículas da Educação Infantil" loading="lazy">
+              <div><b>Matrículas abertas</b><span>Atendimento para novas famílias interessadas no ano letivo de 2026.</span></div>
+            </article>
+            <article class="campaign-card">
+              <img src="/Colégio Assembleiano de Marília _ CAM_files/ensinomedio.jpg" alt="Campanha Transformando vidas através da educação" loading="lazy">
+              <div><b>Transformando vidas</b><span>A frase da campanha conversa bem com o posicionamento principal.</span></div>
+            </article>
+            <article class="campaign-card">
+              <img src="/Colégio Assembleiano de Marília _ CAM_files/ensinofundamental.jpg" alt="Alunas estudando com notebook no CAM" loading="lazy">
+              <div><b>Rotina atual</b><span>Ambiente escolar que valoriza aprendizagem, convivência e acompanhamento.</span></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mackenzie" class="section-soft">
+      <div class="wrap">
+        <div class="mackenzie">
+          <div class="mackenzie-logo">
+            <img src="./Colégio Assembleiano de Marília _ CAM_files/mackenzie.jpg" alt="Sistema Mackenzie de Ensino" loading="lazy">
+          </div>
+          <div>
+            <span class="label">Sistema de ensino</span>
+            <h2>Parceria pedagógica que reforça organização, conteúdo e confiança.</h2>
+            <p>O Sistema Mackenzie de Ensino fortalece a organização pedagógica, oferecendo material estruturado, sequência didática e apoio ao trabalho dos professores.</p>
+            <p>Essa parceria contribui para uma jornada de aprendizagem mais consistente, com conteúdos planejados e continuidade entre as etapas escolares.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="label">Fotos da escola</span>
+            <h2>Ambientes, campanhas e momentos que contam a vida do colégio.</h2>
+          </div>
+          <p class="lead"></p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-tile large">
+            <img src="./Colégio Assembleiano de Marília _ CAM_files/fachada-atual.jpg" alt="Fachada atual do Colégio Assembleiano" loading="lazy">
+            <figcaption>Fachada atual do colégio</figcaption>
+          </figure>
+          <figure class="gallery-tile">
+            <img src="./Colégio Assembleiano de Marília _ CAM_files/fachada-antiga.jpg" alt="Fachada antiga do Colégio Assembleiano" loading="lazy">
+            <figcaption>Memória e trajetória</figcaption>
+          </figure>
+          <figure class="gallery-tile">
+            <img src="./Colégio Assembleiano de Marília _ CAM_files/alunas-tecnologia.jpg" alt="Alunas usando notebook" loading="lazy">
+            <figcaption>Alunas in atividade</figcaption>
+          </figure>
+          <figure class="gallery-tile">
+            <img src="./Colégio Assembleiano de Marília _ CAM_files/campanha-transformando-vidas.jpg" alt="Campanha do Colégio Assembleiano" loading="lazy">
+            <figcaption>Campanha institucional</figcaption>
+          </figure>
+          <figure class="gallery-tile">
+            <img src="./Colégio Assembleiano de Marília _ CAM_files/matriculas-infantil.jpg" alt="Campanha de matrículas abertas" loading="lazy">
+            <figcaption>Matrículas abertas</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="matriculas" class="admissions">
+      <div class="wrap admissions-grid">
+        <div>
+          <span class="label">Matrículas</span>
+          <h2>Um processo mais claro para transformar interesse em visita.</h2>
+          <p class="lead">A equipe da escola acompanha cada etapa para que a família entenda vagas, documentos, visita e confirmação da matrícula.</p>
+          <div style="margin-top: 24px;">
+            <a class="btn btn-primary" href="http://127.0.0.1:4173/index.html#contato">Falar com a secretaria</a>
+          </div>
+        </div>
+
+        <div class="steps">
+          <article class="step"><b>1</b><h3>Primeiro contato</h3><p>A família informa série, idade do aluno e melhor canal de atendimento.</p></article>
+          <article class="step"><b>2</b><h3>Orientação</h3><p>A secretaria explica vagas, documentos, values e próximos passos.</p></article>
+          <article class="step"><b>3</b><h3>Visita</h3><p>Os responsáveis conhecem estrutura, equipe e rotina escolar.</p></article>
+          <article class="step"><b>4</b><h3>Confirmação</h3><p>Com tudo alinhado, a família garante a vaga do aluno.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="wrap contact-grid">
+        <div>
+          <span class="label">Contato</span>
+          <h2>Agende uma visita ou tire dúvidas sobre matrícula.</h2>
+          <p class="lead">O formulário é direto para não cansar o responsável. A escola pode receber a solicitação e continuar pelo WhatsApp ou telefone.</p>
+          <div class="contact-list">
+            <div class="contact-item"><b>Secretaria</b><span>Atendimento em horário comercial</span></div>
+            <div class="contact-item"><b>Endereço</b><span>R. Nossa Senhora de Fátima, 560 - Marília/SP</span></div>
+            <div class="contact-item"><b>Portal dos pais</b><span>w3soft.com.br/cam</span></div>
+          </div>
+        </div>
+
+        <form id="leadForm">
+          <div class="form-grid">
+            <label>Nome do responsável<input name="nome" autocomplete="name" required=""></label>
+            <label>Telefone ou WhatsApp<input name="telefone" autocomplete="tel" required=""></label>
+            <label>E-mail<input type="email" name="email" autocomplete="email"></label>
+            <label>Segmento de interesse
+              <select name="segmento" required="">
+                <option value="">Selecione</option>
+                <option>Educação Infantil</option>
+                <option>Ensino Fundamental</option>
+                <option>Ensino Médio</option>
+              </select>
+            </label>
+            <label class="span-2">Mensagem<textarea name="mensagem" placeholder="Conte a série de interesse, dúvidas ou melhor horário para contato."></textarea></label>
+            <button class="btn btn-navy span-2" type="submit">Enviar solicitação</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <img src="/Colégio Assembleiano de Marília _ CAM_files/footer.jpg" alt="Colégio Assembleiano de Marília">
+      <span>Colégio Assembleiano de Marília - Ensinar e educar para a vida.</span>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? '×' : '☰';
+    });
+
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = '☰';
+      });
+    });
+
+    document.getElementById('leadForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const button = event.currentTarget.querySelector('button[type="submit"]');
+      const original = button.textContent;
+      button.textContent = 'Solicitação registrada';
+      button.disabled = true;
+      setTimeout(() => {
+        button.textContent = original;
+        button.disabled = false;
+        event.currentTarget.reset();
+      }, 2500);
+    });
+  </script>
+
+</body></html>
